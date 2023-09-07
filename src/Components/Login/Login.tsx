@@ -60,7 +60,13 @@ export const LoginWrapper = styled.form<any>`
     border-image-source: linear-gradient(129.28deg, #969696 0.61%, #343434 99.27%);
     background: linear-gradient(0deg, #27292D, #27292D),
     linear-gradient(129.28deg, #969696 0.61%, #343434 99.27%);
+
+    @media only screen and (max-width: 600px) {
+        width:100%;
+        max-width: 300px;
+    }
 `
+
 
 const ForgotPasswordLink = styled.div`
     color: ${({ theme }) => theme.colors.primary}; 

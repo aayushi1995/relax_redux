@@ -50,6 +50,7 @@ export const CommentSection = styled.div`
     justify-content: flex-start;
     align-items: center;
     margin: 15px 0px;
+    cursor: pointer;
 `
 
 export const TransparentInput = styled.input`

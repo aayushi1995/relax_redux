@@ -19,13 +19,10 @@ const Dashboard = () => {
         
     // TODO : perform proper post and type safety
     const handlePostCreate = (content:string) => {
-        console.log(content)
         setOpenModal(true)
     }
-    
 
     return (
-       
         <Center>
             <DashboardWrapper>
                 <Typography color={'primary'} fontWeight={500} textTransform={'inherit'} size={'xl'}>Hello Jane</Typography>
@@ -40,7 +37,6 @@ const Dashboard = () => {
                     setOpen={setOpenModal}
                 />
             </DashboardWrapper>
-            <BlurredBackDrop></BlurredBackDrop>
         </Center>
        
     )
@@ -88,8 +84,3 @@ const defaultPost = [{
 }
 ]
 
-
-const BlurredBackDrop = styled.div`
-
-
-`

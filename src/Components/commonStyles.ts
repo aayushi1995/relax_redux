@@ -8,6 +8,13 @@ interface ITypography {
     textAlign?: string
 }
 
+export const FlexCenter = styled.div`
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+`
 
 export const Center = styled.div`
     text-align: center;
