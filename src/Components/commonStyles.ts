@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 interface ITypography {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    fontWeight?: number
-    textTransform?: "uppercase" | "lowercase" | "inherit" | null
+    font_weight?: number
+    text_transform?: "uppercase" | "lowercase" | "inherit" | null
     color?: string
-    textAlign?: string
+    text_align?: string
 }
 
 export const FlexCenter = styled.div`
@@ -28,9 +28,9 @@ export const PositionRelative = styled.div`
 export const Typography = styled.div<ITypography>`
     color : ${({ theme, color }) => color ? theme?.colors?.[color] : theme?.colors?.white};
     font-size: ${({ theme, size }) => size ? theme?.fontSize?.[size] :  theme.fontSize.lg};
-    font-weight: ${({ fontWeight }) => fontWeight ? fontWeight : 600}; 
-    text-transform: ${({ textTransform }) => textTransform ? textTransform : 'inherit'};
-    text-align: ${({ textAlign }) => textAlign ? textAlign : 'left'};
+    font-weight: ${({ font_weight }) => font_weight ? font_weight : 600}; 
+    text-transform: ${({ text_transform }) => text_transform ? text_transform : 'inherit'};
+    text-align: ${({ text_align }) => text_align ? text_align : 'left'};
     margin:5px;
 `
 export const Button = styled.button<{ isFullWidth?: boolean, type?: string }>`

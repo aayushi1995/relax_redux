@@ -14,8 +14,8 @@ export interface IAuthenticationModal {
 const Login  = ({handleLinkClick: handleRegisterClick, handleClose, showClose}: IAuthenticationModal) => { 
 
     const formRef = useRef() as any
-    const userRef = React.createRef<HTMLInputElement>();
-    const passRef =React.createRef<HTMLInputElement>();
+    const userRef = React.useRef<HTMLInputElement>(null);
+    const passRef =React.useRef<HTMLInputElement>(null);
     
 
     const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -34,14 +34,14 @@ const Login  = ({handleLinkClick: handleRegisterClick, handleClose, showClose}: 
             <Cross/>
         </CrossWrapper>}
         
-        <LoginWrapper ref={formRef}>
-                <Typography color={'lighterText'} fontWeight={500} textTransform={'uppercase'} size={'sm'} >Welcome Back</Typography>
+        <LoginWrapper onSubmit={handleSubmit} ref={formRef}>
+                <Typography color={'lighterText'} font_weight={500} text_transform={'uppercase'} size={'sm'} >Welcome Back</Typography>
                 <Typography> Log into your account </Typography>
                 <br/><br/>
-                <InputBox _id="username" type="text" label="Email / UserName" placeholder="Enter your email or username" isRequired={true} inputRef={userRef} />
-                <InputBox _id="password" type="password" label="Password" placeholder="Enter your password" isRequired={true} inputRef={passRef} />
+                <InputBox key={`login_username`} _id="username" type="text" label="Email / UserName" placeholder="Enter your email or username" isRequired={true} ref={userRef} />
+                <InputBox key={`login_password`} _id="password" type="password" label="Password" placeholder="Enter your password" isRequired={true} ref={passRef} />
                 <ForgotPasswordLink>forgot password ?</ForgotPasswordLink>
-                <Button type="submit" isFullWidth={true} onClick={handleSubmit}>Login now</Button>
+                <Button type="submit" isFullWidth={true}>Login now</Button>
                 <LinkStyled onClick={handleRegisterClick}>Not registered yet? <div>Register</div> </LinkStyled>
                 <br/><br/>
         </LoginWrapper>

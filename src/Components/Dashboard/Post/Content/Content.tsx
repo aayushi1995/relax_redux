@@ -27,9 +27,9 @@ const Content = ({
                 <EmojiWrapper>
                     <Emoji>{isCreateMode ? "💬" : content?.emoji}</Emoji>
                 </EmojiWrapper>
-                {!isCreateMode ? <Typography size={'md'} color={'secondary'} fontWeight={400} textTransform={'inherit'} textAlign={'left'}>
+                {!isCreateMode ? <Typography size={'md'} color={'secondary'} font_weight={400} text_transform={'inherit'} text_align={'left'}>
                     {content?.content}
-                </Typography>: <GhostInput ref={textRef}/>}
+                </Typography>: <GhostInput ref={textRef} aria-label={'postInputBox'} aria-required="true"/>}
             </ContentSection>
 
             {/* POST button */}
@@ -42,7 +42,7 @@ const Content = ({
             // Comments
                 <CommentSection>
                     <span><Comment/></span>
-                    <span><Typography size={'sm'} color={'secondary'} fontWeight={500} textTransform={'inherit'} textAlign={'left'}>
+                    <span><Typography size={'sm'} color={'secondary'} font_weight={500} text_transform={'inherit'} text_align={'left'}>
                         {comments} comments
                     </Typography></span>
                 </CommentSection>

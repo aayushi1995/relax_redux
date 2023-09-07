@@ -10,7 +10,6 @@ interface IInput {
     _id: string
     type:string
     label: string
-    inputRef?: React.RefObject<HTMLInputElement>
     handleChange?: KeyboardEventHandler<HTMLInputElement>
     placeholder?:string
     isRequired?:boolean
@@ -49,7 +48,7 @@ const PasswordIcon = styled.div`
 `
 
 
-const InputBox = forwardRef(({_id, type, label, inputRef, placeholder, isRequired, handleChange}:IInput) => {
+const InputBox = forwardRef(({_id, type, label, placeholder, isRequired, handleChange}:IInput,ref:React.LegacyRef<HTMLInputElement>)=> {
 
     const [show, setShow] = useState(false)
 
@@ -62,7 +61,7 @@ const InputBox = forwardRef(({_id, type, label, inputRef, placeholder, isRequire
             <label htmlFor={_id}>
                 <LabelStyled>{label}</LabelStyled>
                 <PositionRelative>
-                    <InputBoxStyled type={(type === "password") ? (show ? 'text' : `${type}`): type} placeholder={placeholder} id={_id} ref={inputRef} required={isRequired} onKeyDown={handleChange}/>
+                    <InputBoxStyled type={(type === "password") ? (show ? 'text' : `${type}`): type} placeholder={placeholder} id={_id} ref={ref} required={isRequired} onKeyDown={handleChange} aria-label={`${label}`} aria-required="true"/>
                     {type === "password" && <PasswordIcon> 
                         {!show ? <OpenEye onClick={() => handleToggle(true)}/> : <CloseEye onClick={() => handleToggle(false)}/>}
                     </PasswordIcon>

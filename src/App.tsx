@@ -30,7 +30,7 @@ function App() {
           {/* Routing */}
           <BrowserRouter>
           <Routes>
-            <Route path="/" element={
+            <Route path='*' element={
                 <FlexCenter>
                 {showLogin 
                 ? <Login handleClose={() => handleToggle(false)}  handleLinkClick={() => handleToggle(false)} showClose/>
@@ -39,6 +39,7 @@ function App() {
                 </FlexCenter>
               } />
               <Route path="/dashboard" element={<Dashboard />} />
+
           </Routes>
          </BrowserRouter>
         </MainContainer>

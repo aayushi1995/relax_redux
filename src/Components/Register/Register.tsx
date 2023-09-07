@@ -10,9 +10,9 @@ const Register  = ({handleLinkClick:handleLoginClick, handleClose, showClose}: I
 
     const formRef = useRef() as any
 
-    const emailRef = React.createRef<HTMLInputElement>();
-    const userRef = React.createRef<HTMLInputElement>();
-    const passRef =React.createRef<HTMLInputElement>();
+    const emailRef = React.useRef<HTMLInputElement>(null);
+    const userRef = React.useRef<HTMLInputElement>(null);
+    const passRef =React.useRef<HTMLInputElement>(null);
     
 
     const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -30,14 +30,14 @@ const Register  = ({handleLinkClick:handleLoginClick, handleClose, showClose}: I
         {showClose && <CrossWrapper onClick={handleClose}>
             <Cross/>
         </CrossWrapper>}
-        <RegisterWrapper ref={formRef}>
-                <Typography color={'lighterText'} fontWeight={500} textTransform={'uppercase'} size={'sm'} >SIGN UP</Typography>
+        <RegisterWrapper onSubmit={handleSubmit} ref={formRef}>
+                <Typography color={'lighterText'} font_weight={500} text_transform={'uppercase'} size={'sm'} >SIGN UP</Typography>
                 <Typography> Create an account to continue </Typography>
                 <br/><br/>
-                <InputBox _id="email" type="email" label="Email" placeholder="Enter your email" isRequired={true} inputRef={emailRef} />
-                <InputBox _id="username" type="text" label="Username" placeholder="Choose your preferred username" isRequired={true} inputRef={userRef} />
-                <InputBox _id="password" type="password" label="Password" placeholder="Choose your strong password" isRequired={true} inputRef={passRef} />
-                <Button type="submit" isFullWidth={true} onClick={handleSubmit}>Continue</Button>
+                <InputBox  key={`register_email`}  _id="email" type="email" label="Email" placeholder="Enter your email" isRequired={true} ref={emailRef} />
+                <InputBox  key={`register_username`}  _id="username" type="text" label="Username" placeholder="Choose your preferred username" isRequired={true} ref={userRef} />
+                <InputBox  key={`register_password`} _id="password" type="password" label="Password" placeholder="Choose your strong password" isRequired={true} ref={passRef} />
+                <Button type="submit" isFullWidth={true}>Continue</Button>
                 <LinkStyled onClick={handleLoginClick}>Already have an account ? <div>Login</div> </LinkStyled>
         </RegisterWrapper>
         </Center>

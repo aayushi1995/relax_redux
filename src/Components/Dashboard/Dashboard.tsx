@@ -25,8 +25,8 @@ const Dashboard = () => {
     return (
         <Center>
             <DashboardWrapper>
-                <Typography color={'primary'} fontWeight={500} textTransform={'inherit'} size={'xl'}>Hello Jane</Typography>
-                <Typography color={'secondary'} fontWeight={400} textTransform={'inherit'} size={'md'}>How are you doing today? Would you like to share something with the community 🤗</Typography>
+                <Typography color={'primary'} font_weight={500} text_transform={'inherit'} size={'xl'}>Hello Jane</Typography>
+                <Typography color={'secondary'} font_weight={400} text_transform={'inherit'} size={'md'}>How are you doing today? Would you like to share something with the community 🤗</Typography>
 
                 {/* <Post/> */}
                 <Post id={'create'} isCreateMode={true} handlePostCreate={handlePostCreate}/>

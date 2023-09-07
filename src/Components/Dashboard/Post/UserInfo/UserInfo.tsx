@@ -25,8 +25,8 @@ const UserInfo = ({
             <UserInfoSection>
                 {!isCreateMode && <ProfilePic src={profilePic} alt="user profile"/>}
                 <NameInfo>
-                    <Typography size={'md'} color={'primary'} fontWeight={500} textTransform={'inherit'}>{isCreateMode ? "Create Post" : name}</Typography>
-                    {!isCreateMode && <Typography size={'sm'} color={'secondary'} fontWeight={500} textTransform={'inherit'}>{createdAt && timeAgo(createdAt)} {isEdited ? ' . Edited' : ''}</Typography>}
+                    <Typography size={'md'} color={'primary'} font_weight={500} text_transform={'inherit'}>{isCreateMode ? "Create Post" : name}</Typography>
+                    {!isCreateMode && <Typography size={'sm'} color={'secondary'} font_weight={500} text_transform={'inherit'}>{createdAt && timeAgo(createdAt)} {isEdited ? ' . Edited' : ''}</Typography>}
                 </NameInfo>
             </UserInfoSection>
             {!isCreateMode && <Button type={'ghost'} onClick={() => handleMoreOptions && handleMoreOptions(true)}><MoreOptions style={{cursor: 'pointer'}} /></Button>}
