@@ -1,8 +1,8 @@
 
 import React, { useState, forwardRef, KeyboardEventHandler } from 'react'
 import styled from 'styled-components'
-import {ReactComponent as OpenEye} from '../../assests/eye.svg'
-import {ReactComponent as CloseEye} from '../../assests/hideeye.svg'
+import {ReactComponent as OpenEye} from '../../images/svg/eye.svg'
+import {ReactComponent as CloseEye} from '../../images/svg/hideeye.svg'
 import { PositionRelative } from '../commonStyles'
 
 // type

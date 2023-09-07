@@ -1,11 +1,17 @@
-import React,{useRef} from 'react'
+import React,{MouseEventHandler, useRef} from 'react'
 import styled from 'styled-components'
 import InputBox from '../InputBox/InputBox'
-import { Center, Greeting, Button, LinkStyled } from '../commonStyles'
+import { Center, Typography, Button, LinkStyled, CrossWrapper } from '../commonStyles'
+import {ReactComponent as Cross} from '../../images/svg/cross.svg'
+
+export interface IAuthenticationModal {
+    handleLinkClick: MouseEventHandler<HTMLButtonElement>
+    handleClose?: React.MouseEventHandler<HTMLDivElement> 
+    showClose?:boolean
+}
 
 
-
-const Login  = () => { 
+const Login  = ({handleLinkClick: handleRegisterClick, handleClose, showClose}: IAuthenticationModal) => { 
 
     const formRef = useRef() as any
     const userRef = React.createRef<HTMLInputElement>();
@@ -24,15 +30,20 @@ const Login  = () => {
 
     return (
         <Center>
+        {showClose && <CrossWrapper onClick={handleClose}>
+            <Cross/>
+        </CrossWrapper>}
+        
         <LoginWrapper ref={formRef}>
-                <Greeting primary={true}>Welcome Back</Greeting>
-                <Greeting> Log into your account </Greeting>
+                <Typography color={'lighterText'} fontWeight={500} textTransform={'uppercase'} size={'sm'} >Welcome Back</Typography>
+                <Typography> Log into your account </Typography>
                 <br/><br/>
                 <InputBox _id="username" type="text" label="Email / UserName" placeholder="Enter your email or username" isRequired={true} inputRef={userRef} />
                 <InputBox _id="password" type="password" label="Password" placeholder="Enter your password" isRequired={true} inputRef={passRef} />
                 <ForgotPasswordLink>forgot password ?</ForgotPasswordLink>
                 <Button type="submit" isFullWidth={true} onClick={handleSubmit}>Login now</Button>
-                <LinkStyled>Not registered yet? <div>Register</div> </LinkStyled>
+                <LinkStyled onClick={handleRegisterClick}>Not registered yet? <div>Register</div> </LinkStyled>
+                <br/><br/>
         </LoginWrapper>
         </Center>
     )
@@ -40,7 +51,7 @@ const Login  = () => {
 
 
 // TODO : fix the type error
-const LoginWrapper = styled.form<any>`
+export const LoginWrapper = styled.form<any>`
     width: 500px;
     padding: 20px;
     border: 2px solid;

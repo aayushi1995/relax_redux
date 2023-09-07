@@ -1,11 +1,12 @@
 import React,{useRef} from 'react'
-import styled from 'styled-components'
 import InputBox from '../InputBox/InputBox'
-import { Center, Greeting, Button, LinkStyled } from '../commonStyles'
+import { Center, Typography, Button, LinkStyled, CrossWrapper } from '../commonStyles'
+import { IAuthenticationModal, LoginWrapper as RegisterWrapper } from '../Login/Login'
+import {ReactComponent as Cross} from '../../images/svg/cross.svg'
 
 
 
-const Register  = () => { 
+const Register  = ({handleLinkClick:handleLoginClick, handleClose, showClose}: IAuthenticationModal) => { 
 
     const formRef = useRef() as any
 
@@ -26,32 +27,24 @@ const Register  = () => {
 
     return (
         <Center>
-        <LoginWrapper ref={formRef}>
-                <Greeting primary={true}>SIGN UP</Greeting>
-                <Greeting> Create an account to continue </Greeting>
+        {showClose && <CrossWrapper onClick={handleClose}>
+            <Cross/>
+        </CrossWrapper>}
+        <RegisterWrapper ref={formRef}>
+                <Typography color={'lighterText'} fontWeight={500} textTransform={'uppercase'} size={'sm'} >SIGN UP</Typography>
+                <Typography> Create an account to continue </Typography>
                 <br/><br/>
                 <InputBox _id="email" type="email" label="Email" placeholder="Enter your email" isRequired={true} inputRef={emailRef} />
                 <InputBox _id="username" type="text" label="Username" placeholder="Choose your preferred username" isRequired={true} inputRef={userRef} />
                 <InputBox _id="password" type="password" label="Password" placeholder="Choose your strong password" isRequired={true} inputRef={passRef} />
                 <Button type="submit" isFullWidth={true} onClick={handleSubmit}>Continue</Button>
-                <LinkStyled>Already have an account ? <div>Login</div> </LinkStyled>
-        </LoginWrapper>
+                <LinkStyled onClick={handleLoginClick}>Already have an account ? <div>Login</div> </LinkStyled>
+        </RegisterWrapper>
         </Center>
     )
 }
 
 
-// TODO : fix the type error
-const LoginWrapper = styled.form<any>`
-    width: 500px;
-    padding: 20px;
-    border: 2px solid;
-    border-image-slice: 1;
-    border-width: 2px;
-    border-image-source: linear-gradient(129.28deg, #969696 0.61%, #343434 99.27%);
-    background: linear-gradient(0deg, #27292D, #27292D),
-    linear-gradient(129.28deg, #969696 0.61%, #343434 99.27%);
-`
 
 
 export default Register

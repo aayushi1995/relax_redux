@@ -8,6 +8,9 @@
         border: "#e0e0e0",
         primaryBackground: "#000000",
         secondaryBackground: "#35373B",
+        postBackgroundColor: "#191920",
+        emojiBackgroundColor: "#27292D",
+        crossBackgroundColor: "#131319", 
         white: "#fff",
         button: "#4A96FF"
     },
