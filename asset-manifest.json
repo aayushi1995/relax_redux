@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/relaxredux/static/css/main.c5b38742.css",
+    "main.js": "/relaxredux/static/js/main.d15f7f18.js",
+    "static/media/hideeye.svg": "/relaxredux/static/media/hideeye.2e803e487afca30d46020e880d111a60.svg",
+    "static/media/eye.svg": "/relaxredux/static/media/eye.1f5c3ba43e6b1929090a5d82ff5f7f3b.svg",
+    "static/media/chatBubble.svg": "/relaxredux/static/media/chatBubble.745e8cb4a99cdc3f531ce6287df4fadc.svg",
+    "index.html": "/relaxredux/index.html",
+    "static/media/cross.svg": "/relaxredux/static/media/cross.c4c4077ce4a14cb039607b3398007bb9.svg",
+    "static/media/moreoptions.svg": "/relaxredux/static/media/moreoptions.fba6de1c306888d9135a97648f926b43.svg",
+    "main.c5b38742.css.map": "/relaxredux/static/css/main.c5b38742.css.map",
+    "main.d15f7f18.js.map": "/relaxredux/static/js/main.d15f7f18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5b38742.css",
+    "static/js/main.d15f7f18.js"
+  ]
+}
