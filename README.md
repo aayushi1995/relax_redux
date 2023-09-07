@@ -2,8 +2,7 @@
 ## Relax Redux
 
 ### Description:
- We have a social media web app with 2 pages
-
+ We have a community app with 2 pages.
 -login page
 -dashboard page
 
