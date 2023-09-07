@@ -2,7 +2,7 @@
 import { useState } from 'react';
 // router
 import { Route, Routes } from "react-router";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 //components
 import Dashboard from './Components/Dashboard/Dashboard'
 import { ThemeProvider } from "styled-components";
@@ -15,6 +15,8 @@ import theme from './Theme/theme'
 import './App.css';
 import { FlexCenter } from './Components/commonStyles';
 
+
+
 function App() {
 
 
@@ -24,6 +26,8 @@ function App() {
     setShowLogin(value)
   }
 
+
+
   return (
     <ThemeProvider theme={theme}>
         <MainContainer>
@@ -31,12 +35,12 @@ function App() {
 
           <BrowserRouter>
           {/* <HashRouter basename="/"> */}
-            <Routes>
+          <Routes>
               <Route path='*' element={
                   <FlexCenter>
                   {showLogin 
-                  ? <Login handleClose={() => handleToggle(false)}  handleLinkClick={() => handleToggle(false)} showClose/>
-                  : <Register handleClose={() => handleToggle(false)} handleLinkClick={() => handleToggle(true)} showClose/>
+                  ? <Login handleClose={() => handleToggle(false)}  handleLinkClick={() => handleToggle(false)} showClose={false}/>
+                  : <Register handleClose={() => handleToggle(false)} handleLinkClick={() => handleToggle(true)} showClose={false}/>
                   }
                   </FlexCenter>
                 } />
