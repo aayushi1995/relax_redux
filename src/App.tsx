@@ -32,9 +32,7 @@ function App() {
     <ThemeProvider theme={theme}>
         <MainContainer>
           {/* Routing */}
-
           <BrowserRouter>
-          {/* <HashRouter basename="/"> */}
           <Routes>
               <Route path='*' element={
                   <FlexCenter>
@@ -46,7 +44,6 @@ function App() {
                 } />
                 <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
-          {/* </HashRouter> */}
          </BrowserRouter>
         </MainContainer>
     </ThemeProvider>
