@@ -41,7 +41,7 @@ const Login  = ({handleLinkClick: handleRegisterClick, handleClose, showClose}: 
                 <InputBox key={`login_username`} _id="username" type="text" label="Email / UserName" placeholder="Enter your email or username" isRequired={true} ref={userRef} />
                 <InputBox key={`login_password`} _id="password" type="password" label="Password" placeholder="Enter your password" isRequired={true} ref={passRef} />
                 <ForgotPasswordLink>forgot password ?</ForgotPasswordLink>
-                <Button type="submit" isFullWidth={true}>Login now</Button>
+                <Button type="submit" is_full_width={true}>Login now</Button>
                 <LinkStyled onClick={handleRegisterClick}>Not registered yet? <div>Register</div> </LinkStyled>
                 <br/><br/>
         </LoginWrapper>

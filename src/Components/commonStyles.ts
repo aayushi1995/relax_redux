@@ -33,11 +33,11 @@ export const Typography = styled.div<ITypography>`
     text-align: ${({ text_align }) => text_align ? text_align : 'left'};
     margin:5px;
 `
-export const Button = styled.button<{ isFullWidth?: boolean, type?: string }>`
+export const Button = styled.button<{ is_full_width?: boolean, type?: string }>`
     background-color : ${({ theme, type }) => type === "ghost" ? 'transparent': theme.colors.button};
     color : ${({ theme, type }) =>  type === "ghost" ? 'inherit': theme.colors.white};
     font-size : ${({ theme }) => theme.fontSize.md};
-    width: ${({ isFullWidth }) => isFullWidth ? '100%' : 'auto'};
+    width: ${({ is_full_width }) => is_full_width ? '100%' : 'auto'};
     font-weight: 600;
     border: none;
     border-radius: 4px ;

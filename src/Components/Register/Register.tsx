@@ -37,7 +37,7 @@ const Register  = ({handleLinkClick:handleLoginClick, handleClose, showClose}: I
                 <InputBox  key={`register_email`}  _id="email" type="email" label="Email" placeholder="Enter your email" isRequired={true} ref={emailRef} />
                 <InputBox  key={`register_username`}  _id="username" type="text" label="Username" placeholder="Choose your preferred username" isRequired={true} ref={userRef} />
                 <InputBox  key={`register_password`} _id="password" type="password" label="Password" placeholder="Choose your strong password" isRequired={true} ref={passRef} />
-                <Button type="submit" isFullWidth={true}>Continue</Button>
+                <Button type="submit" is_full_width={true}>Continue</Button>
                 <LinkStyled onClick={handleLoginClick}>Already have an account ? <div>Login</div> </LinkStyled>
         </RegisterWrapper>
         </Center>

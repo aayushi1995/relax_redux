@@ -2,7 +2,7 @@
 import { useState } from 'react';
 // router
 import { Route, Routes } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 //components
 import Dashboard from './Components/Dashboard/Dashboard'
 import { ThemeProvider } from "styled-components";
@@ -28,19 +28,21 @@ function App() {
     <ThemeProvider theme={theme}>
         <MainContainer>
           {/* Routing */}
-          <BrowserRouter>
-          <Routes>
-            <Route path='*' element={
-                <FlexCenter>
-                {showLogin 
-                ? <Login handleClose={() => handleToggle(false)}  handleLinkClick={() => handleToggle(false)} showClose/>
-                : <Register handleClose={() => handleToggle(false)} handleLinkClick={() => handleToggle(true)} showClose/>
-                }
-                </FlexCenter>
-              } />
-              <Route path="/dashboard" element={<Dashboard />} />
 
-          </Routes>
+          <BrowserRouter>
+          {/* <HashRouter basename="/"> */}
+            <Routes>
+              <Route path='*' element={
+                  <FlexCenter>
+                  {showLogin 
+                  ? <Login handleClose={() => handleToggle(false)}  handleLinkClick={() => handleToggle(false)} showClose/>
+                  : <Register handleClose={() => handleToggle(false)} handleLinkClick={() => handleToggle(true)} showClose/>
+                  }
+                  </FlexCenter>
+                } />
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
+          {/* </HashRouter> */}
          </BrowserRouter>
         </MainContainer>
     </ThemeProvider>
